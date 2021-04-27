@@ -11,50 +11,18 @@ import AddEmployee from '../../Components/AddEmployee/addEmployee';
 declare module 'react-table' {
 
     interface TableInstance<D extends object = {}>
-        extends UseColumnOrderInstanceProps<D>,
-        UseExpandedInstanceProps<D>,
-        UseFiltersInstanceProps<D>,
-        UseGlobalFiltersInstanceProps<D>,
-        UseGroupByInstanceProps<D>,
-        UsePaginationInstanceProps<D>,
-        UseRowSelectInstanceProps<D>,
-        UseRowStateInstanceProps<D>,
+        extends  UsePaginationInstanceProps<D>,
         UseSortByInstanceProps<D> {
-        editable: boolean;
     }
 
     interface TableState<D extends object = {}>
-        extends UseColumnOrderState<D>,
-        UseExpandedState<D>,
-        UseFiltersState<D>,
-        UseGlobalFiltersState<D>,
-        UseGroupByState<D>,
-        UsePaginationState<D>,
-        UseResizeColumnsState<D>,
-        UseRowSelectState<D>,
-        UseRowStateState<D>,
+        extends  UsePaginationState<D>,
         UseSortByState<D> { }
 
-    interface ColumnInterface<D extends object = {}>
-        extends UseFiltersColumnOptions<D>,
-        UseGlobalFiltersColumnOptions<D>,
-        UseGroupByColumnOptions<D>,
-        UseResizeColumnsColumnOptions<D>,
-        UseSortByColumnOptions<D> { }
 
     interface ColumnInstance<D extends object = {}>
-        extends UseFiltersColumnProps<D>,
-        UseGroupByColumnProps<D>,
-        UseResizeColumnsColumnProps<D>,
-        UseSortByColumnProps<D> { }
+        extends UseSortByColumnProps<D> { }
 
-    interface Cell<D extends object = {}> extends UseGroupByCellProps<D>, UseRowStateCellProps<D> { }
-
-    interface Row<D extends object = {}>
-        extends UseExpandedRowProps<D>,
-        UseGroupByRowProps<D>,
-        UseRowSelectRowProps<D>,
-        UseRowStateRowProps<D> { }
 }
 
 const EmployeeTable = () => {
