@@ -6,17 +6,17 @@ import { getAllEmployees } from '../../Api/Api';
 import BackDrop from '../../UI/Backdrop/Backdrop';
 import Spinner from '../../UI/Spinner/Spinner';
 import Modal from '../../UI/Modal/Modal';
-import AddEmployee from '../../Components/AddEmployee/addEmployee';
+import AddEmployee from '../AddEmployee/addEmployee';
 
 declare module 'react-table' {
 
     interface TableInstance<D extends object = {}>
-        extends  UsePaginationInstanceProps<D>,
+        extends UsePaginationInstanceProps<D>,
         UseSortByInstanceProps<D> {
     }
 
     interface TableState<D extends object = {}>
-        extends  UsePaginationState<D>,
+        extends UsePaginationState<D>,
         UseSortByState<D> { }
 
 
@@ -24,6 +24,7 @@ declare module 'react-table' {
         extends UseSortByColumnProps<D> { }
 
 }
+
 
 const EmployeeTable = () => {
 
@@ -67,8 +68,7 @@ const EmployeeTable = () => {
                 Header: "Position",
                 accessor: "position"
             },
-        ],
-        []
+        ], []
     );
 
     const {
@@ -112,7 +112,7 @@ const EmployeeTable = () => {
                                 {headerGroup.headers.map(column => (
                                     <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                                         {column.render('Header')}
-                                        {column.isSorted ? (column.isSortedDesc ? <i className="fa fa-arrow-up"></i> : <i className="fa fa-arrow-down"></i> ) : ''}
+                                        {column.isSorted ? (column.isSortedDesc ? <i className="fa fa-arrow-up"></i> : <i className="fa fa-arrow-down"></i>) : ''}
                                     </th>
                                 ))}
                             </tr>
